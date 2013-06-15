@@ -5,6 +5,17 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+
+
+
+#
+# My Changes
+setopt NO_BEEP
+#
+
+export TERM='xterm'
+
+
 #
 # Browser
 #
@@ -17,8 +28,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='gvim'
 export PAGER='less'
 
 #
@@ -26,25 +37,8 @@ export PAGER='less'
 #
 
 if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
+  eval "$(locale)"
 fi
-
-#
-# Paths
-#
-
-typeset -gU cdpath fpath mailpath path
-
-# Set the the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
-
-# Set the list of directories that Zsh searches for programs.
-path=(
-  /usr/local/{bin,sbin}
-  $path
-)
 
 #
 # Less
@@ -61,6 +55,53 @@ if (( $+commands[lesspipe.sh] )); then
 fi
 
 #
+# Paths
+#
+
+typeset -gU cdpath fpath mailpath manpath path
+typeset -gUT INFOPATH infopath
+
+# Set the the list of directories that cd searches.
+# cdpath=(
+#   $cdpath
+# )
+
+# Set the list of directories that info searches for manuals.
+infopath=(
+  /usr/local/share/info
+  /usr/share/info
+  $infopath
+)
+
+# Set the list of directories that man searches for manuals.
+manpath=(
+  /usr/local/share/man
+  /usr/share/man
+  $manpath
+)
+
+for path_file in /etc/manpaths.d/*(.N); do
+  manpath+=($(<$path_file))
+done
+unset path_file
+
+# Set the list of directories that Zsh searches for programs.
+path=(
+  /usr/local/{bin,sbin}
+  /home/adam/.gem/ruby/1.9.1/bin
+  /home/adam/.gem/ruby/2.0.0/bin/
+  /usr/{bin,sbin}
+  /{bin,sbin}
+  $HOME/.rbenv/bin
+  $path
+)
+
+for path_file in /etc/paths.d/*(.N); do
+  path+=($(<$path_file))
+done
+unset path_file
+
+#
 # Temporary Files
 #
 
@@ -70,4 +111,9 @@ if [[ -d "$TMPDIR" ]]; then
     mkdir -p "$TMPPREFIX"
   fi
 fi
+
+# shim for rbenv
+eval "$(rbenv init -)"
+
+
 
