@@ -88,12 +88,12 @@ unset path_file
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
-  /home/adam/.gem/ruby/1.9.1/bin
-  /home/adam/.gem/ruby/2.0.0/bin/
+  /home/adam/.gem/ruby/*/bin
   /usr/{bin,sbin}
   /{bin,sbin}
   $HOME/.rbenv/bin
   $path
+# /home/adam/.gem/ruby/1.9.1/bin
 )
 
 for path_file in /etc/paths.d/*(.N); do

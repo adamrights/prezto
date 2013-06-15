@@ -28,8 +28,10 @@ alias -g RC='rails new myapp -m https://raw.github.com/RailsApps/rails-composer/
 #
 #
 #
+
 # removed until we setup chromium os build again
 # export PATH="$PATH":/home/adam/chromiumos/depot_tools/
+
 
  # From http://grml.org/zsh/zsh-lovers.html
 alias -g ...='../..'
