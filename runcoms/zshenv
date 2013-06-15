@@ -87,10 +87,7 @@ unset path_file
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  /usr/local/{bin,sbin}
-  /home/adam/.gem/ruby/*/bin
-  /usr/{bin,sbin}
-  /{bin,sbin}
+  /usr/bin/
   $HOME/.rbenv/bin
   $path
 # /home/adam/.gem/ruby/1.9.1/bin
@@ -116,7 +113,7 @@ if [[ ! -d "$TMPPREFIX" ]]; then
 fi
 
 # shim for rbenv
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"  the ruby pmodule provides this function
 
 
 

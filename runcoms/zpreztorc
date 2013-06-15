@@ -16,7 +16,7 @@ zstyle ':prezto:*:*' case-sensitive 'no'
 zstyle ':prezto:*:*' color 'yes'
 
 # Set the Zsh modules to load (man zshmodules).
-zstyle ':prezto:load' zmodule 'attr' 'stat' 'datetime' 'files'
+zstyle ':prezto:load' zmodule 'attr' 'stat' 'datetime' 'files' 'compctl' 'complete' 'complist' 'system'
 
 # Set the Zsh functions to load (man zshcontrib).
 zstyle ':prezto:load' zfunction 'zargs' 'zmv'
@@ -34,7 +34,7 @@ zstyle ':prezto:load' pmodule \
   'gnu-utility' 'utility' 'completion' 'fasd'\
   'rails'\
   'ruby'\
-  'git' 'haskell' 'helper' 'node' 'pacman' 'perl' 'python' \
+  'git' 'rsync' 'haskell' 'helper' 'node' 'pacman' 'perl' 'python' \
   'command-not-found'\
   'syntax-highlighting' 'history-substring-search'\
   'prompt' \
