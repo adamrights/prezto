@@ -117,4 +117,4 @@ fi
 eval "$(rbenv init -)"  the ruby pmodule provides this function
 
 
-export path=$path:~/.cabal/bin:~/.xmonad/bin
+export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
