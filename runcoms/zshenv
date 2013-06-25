@@ -116,5 +116,6 @@ fi
 # shim for rbenv
 eval "$(rbenv init -)"  the ruby pmodule provides this function
 
-
+#for xmonad-config
 export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
+
