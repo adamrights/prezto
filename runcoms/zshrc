@@ -3,7 +3,8 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+#   Adam Bedell <adamrights@gmail.com>
+
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -15,19 +16,15 @@ if [[ -s "${ZDOTDIR:-$HOME}/.aliases" ]]; then
   source "${ZDOTDIR:-$HOME}/.aliases"
 fi
 
-
-# Customize to your needs...
+#source z.sh for fuzzy directory hopping
+if [[ -s "${ZDOTDIR:-$HOME}/scripts/z/z.sh"]]; then
+  source "${ZDOTDIR:-$HOME}/scripts/z/z.sh"
+fi
 
 
 # Alias to clone git projects I'm currently using
-#
 alias -g BB='git clone git://github.com/tbranyen/backbone-boilerplate.git'
 alias -g RC='rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb'
-#
-#
-#
-#
-#
 
 # removed until we setup chromium os build again
 # export PATH="$PATH":/home/adam/chromiumos/depot_tools/
