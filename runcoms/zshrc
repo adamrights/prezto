@@ -17,7 +17,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.aliases" ]]; then
 fi
 
 #source z.sh for fuzzy directory hopping
-if [[ -s "${ZDOTDIR:-$HOME}/scripts/z/z.sh"]]; then
+if [[ -s "${ZDOTDIR:-$HOME}/scripts/z/z.sh" ]]; then
   source "${ZDOTDIR:-$HOME}/scripts/z/z.sh"
 fi
 
