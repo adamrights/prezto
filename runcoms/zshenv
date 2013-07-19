@@ -36,6 +36,10 @@ export PAGER='less'
 # Language
 #
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 if [[ -z "$LANG" ]]; then
   eval "$(locale)"
 fi
@@ -119,3 +123,4 @@ eval "$(rbenv init -)"  the ruby pmodule provides this function
 #for xmonad-config
 export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
+[[ -s /home/adam/.nvm/nvm.sh ]] && . /home/adam/.nvm/nvm.sh # This loads NVM
