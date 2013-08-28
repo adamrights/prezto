@@ -93,8 +93,8 @@ unset path_file
 path=(
   /usr/bin/
   $HOME/.rbenv/bin
+  $HOME/bin
   $path
-# /home/adam/.gem/ruby/1.9.1/bin
 )
 
 
@@ -118,9 +118,9 @@ if [[ ! -d "$TMPPREFIX" ]]; then
 fi
 
 # shim for rbenv
-eval "$(rbenv init -)"  the ruby pmodule provides this function
+eval "$(rbenv init -)"
+source ~/.rbenv/completions/rbenv.zsh
 
 #for xmonad-config
-export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
 [[ -s /home/adam/.nvm/nvm.sh ]] && . /home/adam/.nvm/nvm.sh # This loads NVM
