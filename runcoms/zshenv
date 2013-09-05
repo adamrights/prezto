@@ -10,12 +10,12 @@
 
 
 #
-# My Changes
+# Terminal
 #
 setopt NO_BEEP
 
 
-export TERM='xfce4-terminal'
+export TERM='xterm'
 
 
 #
@@ -118,7 +118,7 @@ fi
 
 
 #
-# Shims for sandboxing languages
+# Shims for Sandboxing Dev Evironments
 #
 eval "$(rbenv init -)"
 source ~/.rbenv/completions/rbenv.zsh
