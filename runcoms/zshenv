@@ -3,6 +3,7 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Adam Bedell <adamrights@gmail.com>
 #
 
 
@@ -10,15 +11,17 @@
 
 #
 # My Changes
-setopt NO_BEEP
 #
+setopt NO_BEEP
 
-export TERM='xterm'
+
+export TERM='xfce4-terminal'
 
 
 #
 # Browser
 #
+export CHROME_BIN='chromium'  #for karma testing autoload
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
@@ -35,10 +38,9 @@ export PAGER='less'
 #
 # Language
 #
-
+export LANG=en_US.UTF-8                                                                                                           ✱ ◼
 export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
+
 
 if [[ -z "$LANG" ]]; then
   eval "$(locale)"
@@ -66,9 +68,9 @@ typeset -gU cdpath fpath mailpath manpath path
 typeset -gUT INFOPATH infopath
 
 # Set the the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
+ cdpath=(
+   $cdpath
+ )
 
 # Set the list of directories that info searches for manuals.
 infopath=(
@@ -103,10 +105,7 @@ for path_file in /etc/paths.d/*(.N); do
 done
 unset path_file
 
-#
 # Temporary Files
-#
-
 if [[ ! -d "$TMPDIR" ]]; then
   export TMPDIR="/tmp/$USER"
   mkdir -p -m 700 "$TMPDIR"
@@ -117,10 +116,12 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
-# shim for rbenv
-#eval "$(rbenv init -)"
+
+#
+# Shims for sandboxing languages
+#
+eval "$(rbenv init -)"
 source ~/.rbenv/completions/rbenv.zsh
 
-#for xmonad-config
+[[ -s /home/adam/.nvm/nvm.sh ]] && . /home/adam/.nvm/nvm.sh 
 
-[[ -s /home/adam/.nvm/nvm.sh ]] && . /home/adam/.nvm/nvm.sh # This loads NVM
