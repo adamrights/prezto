@@ -2,7 +2,8 @@
 # Executes commands at the start of an interactive session.
 #
 # Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Sorin Ionescu <sorin.ionescu@gmail.com> Source Sorin's project. This is just a fork.
+#
 #   Adam Bedell <adamrights@gmail.com>
 
 
